@@ -9,8 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
+    origin: ["https://mern-todo-app-amber.vercel.app"],
     credentials: true,
   })
 );
