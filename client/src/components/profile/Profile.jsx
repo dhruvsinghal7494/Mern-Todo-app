@@ -5,6 +5,7 @@ import "./profile.css";
 import { MdAccountCircle } from "react-icons/md";
 import { toast } from "react-toastify";
 import Modal from "react-modal";
+import process from "process";
 
 Modal.setAppElement("#root");
 
@@ -22,7 +23,7 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_REACT_APP_API_KEY}/user`,
+          `${process.env.VITE_REACT_APP_API_KEY}/user`,
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -50,7 +51,7 @@ const Profile = () => {
   const confirmLogout = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/logout`,
+        `${process.env.VITE_REACT_APP_API_KEY}/logout`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -76,7 +77,7 @@ const Profile = () => {
   const handleDeleteProfile = async () => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/user/delete`,
+        `${process.env.VITE_REACT_APP_API_KEY}/user/delete`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -102,7 +103,7 @@ const Profile = () => {
 
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/user/update`,
+        `${process.env.VITE_REACT_APP_API_KEY}/user/update`,
         { name, email },
         {
           withCredentials: true,

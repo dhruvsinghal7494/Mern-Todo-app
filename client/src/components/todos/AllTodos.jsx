@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { formatDistanceToNow } from "date-fns";
 import "./style.css";
+import process from "process";
 
 const Todos = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const Todos = () => {
   const fetchTodos = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todos`,
+        `${process.env.VITE_REACT_APP_API_KEY}/todos`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -43,7 +44,7 @@ const Todos = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/addtodo`,
+        `${process.env.VITE_REACT_APP_API_KEY}/addtodo`,
         { todo: newTodo },
         {
           withCredentials: true,
@@ -62,7 +63,7 @@ const Todos = () => {
   const handleUpdateTodo = async (todoId, completed) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/updateStatus`,
+        `${process.env.VITE_REACT_APP_API_KEY}/todo/updateStatus`,
         { todoId, completed },
         {
           withCredentials: true,
@@ -82,7 +83,7 @@ const Todos = () => {
   const handleDeleteTodo = async (todoId) => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/delete`,
+        `${process.env.VITE_REACT_APP_API_KEY}/todo/delete`,
         {
           data: { todoId },
           withCredentials: true,
@@ -100,7 +101,7 @@ const Todos = () => {
   const handleUpdateTodoText = async (todoId) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/update`,
+        `${process.env.VITE_REACT_APP_API_KEY}/todo/update`,
         { todoId, todo: editingTodo },
         {
           withCredentials: true,

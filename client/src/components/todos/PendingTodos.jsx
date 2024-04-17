@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { formatDistanceToNow } from "date-fns";
 import "./style.css";
+import process from "process";
 
 const PendingTodos = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const PendingTodos = () => {
   const fetchPendingTodos = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/pendingTodos`,
+        `${process.env.VITE_REACT_APP_API_KEY}/pendingTodos`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -42,7 +43,7 @@ const PendingTodos = () => {
   const handleUpdateTodoStatus = async (todoId, completed) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/updateStatus`,
+        `${process.env.VITE_REACT_APP_API_KEY}/todo/updateStatus`,
         { todoId, completed },
         {
           withCredentials: true,
