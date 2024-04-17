@@ -1,14 +1,5 @@
 // import React from "react";
 import { NavLink } from "react-router-dom";
-import PropTypes from "prop-types";
-
-// LoginForm.propTypes = {
-//   email: PropTypes.string.isRequired,
-//   password: PropTypes.string.isRequired,
-//   setEmail: PropTypes.func.isRequired,
-//   setPassword: PropTypes.func.isRequired,
-//   handleSubmit: PropTypes.func.isRequired,
-// };
 
 const LoginForm = ({
   email,

@@ -1,15 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-
-// SignupForm.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   email: PropTypes.string.isRequired,
-//   password: PropTypes.string.isRequired,
-//   setName: PropTypes.func.isRequired,
-//   setEmail: PropTypes.func.isRequired,
-//   setPassword: PropTypes.func.isRequired,
-//   handleSubmit: PropTypes.func.isRequired,
-// };
 
 const SignupForm = ({
   name,

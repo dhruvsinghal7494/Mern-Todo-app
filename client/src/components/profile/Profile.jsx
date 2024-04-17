@@ -22,7 +22,7 @@ const Profile = () => {
     const fetchProfile = async () => {
       try {
         const response = await axios.get(
-          `https://todo-app-api-phi.vercel.app/user`,
+          `${import.meta.env.VITE_REACT_APP_API_KEY}/user`,
           {
             withCredentials: true,
             headers: { "Content-Type": "application/json" },
@@ -50,7 +50,7 @@ const Profile = () => {
   const confirmLogout = async () => {
     try {
       const response = await axios.get(
-        `https://todo-app-api-phi.vercel.app/logout`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/logout`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -76,7 +76,7 @@ const Profile = () => {
   const handleDeleteProfile = async () => {
     try {
       const response = await axios.delete(
-        `https://todo-app-api-phi.vercel.app/user/delete`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/user/delete`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -102,7 +102,7 @@ const Profile = () => {
 
     try {
       const response = await axios.put(
-        `https://todo-app-api-phi.vercel.app/user/update`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/user/update`,
         { name, email },
         {
           withCredentials: true,

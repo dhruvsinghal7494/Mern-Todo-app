@@ -18,7 +18,7 @@ const PendingTodos = () => {
   const fetchPendingTodos = async () => {
     try {
       const response = await axios.get(
-        `https://todo-app-api-phi.vercel.app/pendingTodos`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/pendingTodos`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -42,7 +42,7 @@ const PendingTodos = () => {
   const handleUpdateTodoStatus = async (todoId, completed) => {
     try {
       const response = await axios.put(
-        `https://todo-app-api-phi.vercel.app/todo/updateStatus`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/updateStatus`,
         { todoId, completed },
         {
           withCredentials: true,

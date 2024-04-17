@@ -17,7 +17,7 @@ const Signup = () => {
     try {
       // Sending form data to the server
       const response = await axios.post(
-        `https://todo-app-api-phi.vercel.app/signup`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/signup`,
         { name, email, password },
         {
           withCredentials: true,
