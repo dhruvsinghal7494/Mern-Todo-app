@@ -4,7 +4,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import SignupForm from "./SignupForm.jsx";
 import "./style.css";
-import process from "process";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -18,7 +17,7 @@ const Signup = () => {
     try {
       // Sending form data to the server
       const response = await axios.post(
-        `${process.env.VITE_REACT_APP_API_KEY}/signup`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/signup`,
         { name, email, password },
         {
           withCredentials: true,

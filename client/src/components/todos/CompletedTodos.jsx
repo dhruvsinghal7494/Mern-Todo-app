@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 import { MdDoneOutline } from "react-icons/md";
 import { formatDistanceToNow } from "date-fns";
 import "./style.css";
-import process from "process";
 
 const CompletedTodos = () => {
   const navigate = useNavigate();
@@ -20,7 +19,7 @@ const CompletedTodos = () => {
   const fetchCompletedTodos = async () => {
     try {
       const response = await axios.get(
-        `${process.env.VITE_REACT_APP_API_KEY}/completedTodos`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/completedTodos`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -39,7 +38,7 @@ const CompletedTodos = () => {
   const handleDeleteTodo = async (todoId) => {
     try {
       const response = await axios.delete(
-        `${process.env.VITE_REACT_APP_API_KEY}/todo/delete`,
+        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/delete`,
         {
           data: { todoId },
           withCredentials: true,
