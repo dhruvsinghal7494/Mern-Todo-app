@@ -19,7 +19,7 @@ const CompletedTodos = () => {
   const fetchCompletedTodos = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/completedTodos`,
+        `https://todo-app-api-phi.vercel.app/completedTodos`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -38,7 +38,7 @@ const CompletedTodos = () => {
   const handleDeleteTodo = async (todoId) => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/delete`,
+        `https://todo-app-api-phi.vercel.app/todo/delete`,
         {
           data: { todoId },
           withCredentials: true,

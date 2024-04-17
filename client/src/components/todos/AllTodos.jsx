@@ -21,7 +21,7 @@ const Todos = () => {
   const fetchTodos = async () => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todos`,
+        `https://todo-app-api-phi.vercel.app/todos`,
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
@@ -43,7 +43,7 @@ const Todos = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/addtodo`,
+        `https://todo-app-api-phi.vercel.app/addtodo`,
         { todo: newTodo },
         {
           withCredentials: true,
@@ -62,7 +62,7 @@ const Todos = () => {
   const handleUpdateTodo = async (todoId, completed) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/updateStatus`,
+        `https://todo-app-api-phi.vercel.app/todo/updateStatus`,
         { todoId, completed },
         {
           withCredentials: true,
@@ -82,7 +82,7 @@ const Todos = () => {
   const handleDeleteTodo = async (todoId) => {
     try {
       const response = await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/delete`,
+        `https://todo-app-api-phi.vercel.app/todo/delete`,
         {
           data: { todoId },
           withCredentials: true,
@@ -100,7 +100,7 @@ const Todos = () => {
   const handleUpdateTodoText = async (todoId) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/todo/update`,
+        `https://todo-app-api-phi.vercel.app/todo/update`,
         { todoId, todo: editingTodo },
         {
           withCredentials: true,

@@ -16,7 +16,7 @@ const Login = () => {
     try {
       // Sending form data to the server
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_API_KEY}/login`,
+        `https://todo-app-api-phi.vercel.app/login`,
         {
           email,
           password,
@@ -25,14 +25,14 @@ const Login = () => {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
         }
-      ); 
+      );
       // Show success message using Toastify
       toast.success(response.data.message, {
         position: toast.POSITION.TOP_CENTER,
       });
       // Navigate to home page
       navigate("/");
-    } catch (error) { 
+    } catch (error) {
       // Show error message using Toastify
       toast.error(error.response.data.message, {
         position: toast.POSITION.TOP_CENTER,
